@@ -1,0 +1,95 @@
+/* Importing custom font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Defining custom color variables */
+:root {
+    --primary-color: 130 55% 45%;
+    --background-color: 210 60% 98%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    background-color: hsl(var(--background-color));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: hsl(0, 0%, 20%);
+    /* Darker color for header */
+}
+
+.tab-container {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    display: flex;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 0 1px rgba(24, 94, 224, 0.15), 0 6px 12px rgba(24, 94, 224, 0.15);
+    position: relative;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Styling for each tab label */
+.tab-label {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: inherit;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* The sliding element indicating the selected tab */
+.tab-container .tab-slider {
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    border-radius: inherit;
+    background-color: hsl(var(--primary-color));
+    /* Active tab color */
+    z-index: 0;
+    transition: 0.3s ease;
+}
+
+/* When a tab is checked, its label color changes */
+input[type="radio"]:checked+label {
+    color: #fff;
+}
+
+/* Position the slider based on the checked tab */
+input[id="tab-html"]:checked~.tab-slider {
+    transform: translateX(0);
+}
+
+input[id="tab-css"]:checked~.tab-slider {
+    transform: translateX(100%);
+}
+
+input[id="tab-js"]:checked~.tab-slider {
+    transform: translateX(200%);
+}
+
+input[id="tab-react"]:checked~.tab-slider {
+    transform: translateX(300%);
+}

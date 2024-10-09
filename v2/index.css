@@ -1,0 +1,114 @@
+/* Importing custom font */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
+
+:root {
+    --color-primary: hsl(42, 87%, 60%);
+    --color-dark: hsl(240, 10%, 20%);
+    --color-light: hsl(240, 8%, 80%);
+    --color-background: hsl(210, 25%, 96%);
+    --color-white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    color: var(--color-dark);
+}
+
+button,
+ul,
+li {
+    all: unset;
+}
+
+.section-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    margin-top: 300px;
+}
+
+.section-menu {
+    display: flex;
+    width: 100%;
+}
+
+.section-menu>.section-tab {
+    flex: 1;
+    background-color: var(--color-light);
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.section-menu>.section-tab:not(:last-child) {
+    border-right: 2px solid var(--color-white);
+}
+
+.section-menu>.section-tab.active {
+    background-color: var(--color-white);
+}
+
+.section-tab>a {
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-dark);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.section-menu>.section-tab.active>a {
+    color: var(--color-primary);
+}
+
+.section-panels {
+    padding: 50px;
+}
+
+.panel>h3 {
+    font-size: 30px;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+}
+
+.panel>p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 30px;
+}
+
+.panel>button {
+    padding: 10px 30px;
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    border-radius: 6px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.panel>button:hover {
+    opacity: 0.8;
+}
